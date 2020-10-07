@@ -7,6 +7,8 @@ const connectDB = require('./util/connectDB');
 const expressValidator = require('express-validator');
 const authRoutes = require('./routes/authRoute');
 const userRoutes = require('./routes/userRoute');
+const categoryRoutes = require('./routes/categoryRoute');
+
 //middleware
 app.use(morgan('dev')); //give route in console//good for development
 app.use(bodyParser.json());
@@ -16,6 +18,7 @@ app.use(cookieParser());
 //routes
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
+app.use('/api', categoryRoutes);
 
 //server listen
 const port = process.env.PORT || 8080;

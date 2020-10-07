@@ -15,7 +15,6 @@ const signUp = async (req, res, next) => {
     return next(error);
   }
 
-  // const modifiedUser = newUser.toObject({ getters: true });
   user.salt = undefined;
   user.hashed_password = undefined;
 

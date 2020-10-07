@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const uniqueValidator = require('mongoose-unique-validator');
 const uuidv1 = require('uuidv1');
 const crypto = require('crypto');
 
