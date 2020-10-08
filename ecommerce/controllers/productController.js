@@ -1,18 +1,20 @@
-const Category = require('../models/category');
+const formidable = require('formidable');
+const _ = require('lodash');
+const Product = require('../models/product');
 const { errorHandler } = require('../helpers/dbErrorHandler');
 
 const create = async (req, res, next) => {
-  const category = await new Category(req.body);
+  const product = await new Product(req.body);
 
   try {
     // Save category
-    await category.save();
+    await product.save();
   } catch (err) {
     const error = errorHandler(err);
     return next(error);
   }
 
-  res.status(201).json({ category });
+  res.status(201).json({ product });
 };
 
 exports.create = create;

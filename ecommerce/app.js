@@ -8,6 +8,7 @@ const expressValidator = require('express-validator');
 const authRoutes = require('./routes/authRoute');
 const userRoutes = require('./routes/userRoute');
 const categoryRoutes = require('./routes/categoryRoute');
+const productRoutes = require('./routes/productRoute');
 
 //middleware
 app.use(morgan('dev')); //give route in console//good for development
@@ -19,6 +20,7 @@ app.use(cookieParser());
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 app.use('/api', categoryRoutes);
+app.use('/api', productRoutes);
 
 //server listen
 const port = process.env.PORT || 8080;
